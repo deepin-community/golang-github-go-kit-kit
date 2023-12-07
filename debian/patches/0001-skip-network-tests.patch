@@ -1,0 +1,37 @@
+From: Daniel Swarbrick <dswarbrick@debian.org>
+Date: Fri, 21 Jul 2023 16:33:51 +0800
+Subject: Skip test(s) which require internet connectivity
+
+Forwarded: not-needed
+Last-Update: 2022-12-08
+---
+ tracing/opencensus/http_test.go | 2 ++
+ tracing/zipkin/http_test.go     | 2 ++
+ 2 files changed, 4 insertions(+)
+
+diff --git a/tracing/opencensus/http_test.go b/tracing/opencensus/http_test.go
+index 78ff7d5..67b4fbc 100644
+--- a/tracing/opencensus/http_test.go
++++ b/tracing/opencensus/http_test.go
+@@ -20,6 +20,8 @@ import (
+ )
+ 
+ func TestHTTPClientTrace(t *testing.T) {
++	t.Skip("Skipping test requiring internet connectivity")
++
+ 	var (
+ 		err     error
+ 		rec     = &recordingExporter{}
+diff --git a/tracing/zipkin/http_test.go b/tracing/zipkin/http_test.go
+index 6d42144..c5de8d5 100644
+--- a/tracing/zipkin/http_test.go
++++ b/tracing/zipkin/http_test.go
+@@ -28,6 +28,8 @@ const (
+ )
+ 
+ func TestHTTPClientTracePropagatesParentSpan(t *testing.T) {
++	t.Skip("Skipping test requiring internet connectivity")
++
+ 	rec := recorder.NewReporter()
+ 	defer rec.Close()
+ 

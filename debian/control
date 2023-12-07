@@ -1,15 +1,74 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-go-kit-kit
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Martina Ferrari <tina@debian.org>,
+           Daniel Swarbrick <dswarbrick@debian.org>,
+Section: golang
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-golang,
+               golang-any,
+               golang-etcd-server-dev,
+               golang-github-aws-aws-sdk-go-dev,
+               golang-github-casbin-casbin-dev,
+               golang-github-go-logfmt-logfmt-dev,
+               golang-github-go-stack-stack-dev,
+               golang-github-golang-jwt-jwt-dev,
+               golang-github-golang-protobuf-1-3-dev,
+               golang-github-influxdata-influxdb1-client-dev,
+               golang-github-opentracing-opentracing-go-dev,
+               golang-github-openzipkin-zipkin-go-dev,
+               golang-github-performancecopilot-speed-dev,
+               golang-github-prometheus-client-golang-dev,
+               golang-github-samuel-go-zookeeper-dev,
+               golang-github-sirupsen-logrus-dev,
+               golang-github-streadway-amqp-dev,
+               golang-github-vividcortex-gohistogram-dev,
+               golang-go.opencensus-dev,
+               golang-go.uber-zap-dev,
+               golang-golang-x-time-dev,
+               golang-google-grpc-dev,
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-go-kit-kit
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-go-kit-kit.git
+Homepage: https://github.com/go-kit/kit
+XS-Go-Import-Path: github.com/go-kit/kit
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-go-kit-kit-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: golang-etcd-server-dev,
+         golang-github-aws-aws-sdk-go-dev,
+         golang-github-casbin-casbin-dev,
+         golang-github-go-logfmt-logfmt-dev,
+         golang-github-go-stack-stack-dev,
+         golang-github-golang-jwt-jwt-dev,
+         golang-github-golang-protobuf-1-3-dev,
+         golang-github-influxdata-influxdb1-client-dev,
+         golang-github-opentracing-opentracing-go-dev,
+         golang-github-openzipkin-zipkin-go-dev,
+         golang-github-performancecopilot-speed-dev,
+         golang-github-prometheus-client-golang-dev,
+         golang-github-samuel-go-zookeeper-dev,
+         golang-github-sirupsen-logrus-dev,
+         golang-github-streadway-amqp-dev,
+         golang-github-vividcortex-gohistogram-dev,
+         golang-go.opencensus-dev,
+         golang-go.uber-zap-dev,
+         golang-golang-x-time-dev,
+         golang-google-grpc-dev,
+         ${misc:Depends},
+Description: Programming toolkit for microservices
+ Go kit is a set of packages and best practices, which provide a comprehensive,
+ robust, and trustable way of building microservices for organizations of any
+ size.
+ .
+ As the dependency tree is enormous, the Debian package only offers some of the
+ components of Go kit:
+ .
+  * auth
+  * endpoint
+  * log
+  * tracing
+  * transport
+  * util
