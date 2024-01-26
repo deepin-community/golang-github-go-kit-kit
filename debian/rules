@@ -1,4 +1,18 @@
 #!/usr/bin/make -f
 
+export DH_VERBOSE := 1
+
+# Don't compile, test, or install a number of packages that require a big
+# number of new dependencies, at least for now.
+export DH_GOLANG_EXCLUDES := \
+    cmd \
+    circuitbreaker \
+    examples \
+    metrics/cloudwatch2 \
+    sd/consul \
+    sd/eureka \
+    transport/awslambda \
+    transport/nats
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang

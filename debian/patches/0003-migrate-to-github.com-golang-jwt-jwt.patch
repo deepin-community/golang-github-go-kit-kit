@@ -1,0 +1,35 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Fri, 21 Jul 2023 16:57:24 +0800
+Subject: migrate to github.com/golang-jwt/jwt
+
+---
+ auth/jwt/middleware.go      | 2 +-
+ auth/jwt/middleware_test.go | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/auth/jwt/middleware.go b/auth/jwt/middleware.go
+index 0e29e6d..09c89e5 100644
+--- a/auth/jwt/middleware.go
++++ b/auth/jwt/middleware.go
+@@ -4,7 +4,7 @@ import (
+ 	"context"
+ 	"errors"
+ 
+-	jwt "github.com/dgrijalva/jwt-go"
++	jwt "github.com/golang-jwt/jwt/v4"
+ 
+ 	"github.com/go-kit/kit/endpoint"
+ )
+diff --git a/auth/jwt/middleware_test.go b/auth/jwt/middleware_test.go
+index 3278e13..1ca835b 100644
+--- a/auth/jwt/middleware_test.go
++++ b/auth/jwt/middleware_test.go
+@@ -8,7 +8,7 @@ import (
+ 
+ 	"crypto/subtle"
+ 
+-	jwt "github.com/dgrijalva/jwt-go"
++	jwt "github.com/golang-jwt/jwt/v4"
+ 	"github.com/go-kit/kit/endpoint"
+ )
+ 
