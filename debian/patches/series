@@ -1,0 +1,4 @@
+0001-skip-network-tests.patch
+0002-fix-32bit-arch-alignment.patch
+0003-migrate-to-github.com-golang-jwt-jwt.patch
+0004-Increase-tolerance-in-histogram-tests.patch
