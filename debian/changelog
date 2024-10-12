@@ -1,3 +1,47 @@
+golang-github-go-kit-kit (0.13.0-4) unstable; urgency=medium
+
+  * Team upload
+  * Fix panic in TestGauge and flaky TestHistogram
+
+ -- Shengjing Zhu <zhsj@debian.org>  Tue, 13 Aug 2024 16:39:57 +0800
+
+golang-github-go-kit-kit (0.13.0-3) unstable; urgency=medium
+
+  * Team upload
+  * Exclude most unused packages
+
+ -- Shengjing Zhu <zhsj@debian.org>  Fri, 02 Aug 2024 14:51:59 +0800
+
+golang-github-go-kit-kit (0.13.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Drop patch no longer needed to fixup etcd import paths
+
+ -- Mathias Gibbens <gibmat@debian.org>  Wed, 31 Jul 2024 23:05:00 +0000
+
+golang-github-go-kit-kit (0.13.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Upload changes from experimental to unstable
+  * Cleanup patch to skip problematic tests
+  * Remove stanza from d/copyright for deleted file
+  * Add Rules-Requires-Root: no in d/control
+  * Update d/watch
+
+ -- Mathias Gibbens <gibmat@debian.org>  Mon, 29 Jul 2024 02:15:12 +0000
+
+golang-github-go-kit-kit (0.13.0-1~exp1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - Drop patches applied upstream, and add patches to fixup import paths
+      and skip some problematic tests for the moment
+  * d/control:
+    - Update Build-Depends and Depends
+    - Update Standards-Version to 4.7.0 (no changes needed)
+
+ -- Mathias Gibbens <gibmat@debian.org>  Wed, 24 Jul 2024 09:29:25 +0000
+
 golang-github-go-kit-kit (0.10.0-6) unstable; urgency=medium
 
   * Team upload

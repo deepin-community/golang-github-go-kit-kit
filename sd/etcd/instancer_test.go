@@ -4,10 +4,10 @@ import (
 	"errors"
 	"testing"
 
-	stdetcd "go.etcd.io/etcd/client"
+	stdetcd "go.etcd.io/etcd/client/v2"
 
-	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/sd"
+	"github.com/go-kit/log"
 )
 
 var _ sd.Instancer = (*Instancer)(nil) // API check

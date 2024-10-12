@@ -19,12 +19,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/metrics"
 	"github.com/go-kit/kit/metrics/generic"
 	"github.com/go-kit/kit/metrics/internal/lv"
 	"github.com/go-kit/kit/metrics/internal/ratemap"
 	"github.com/go-kit/kit/util/conn"
+	"github.com/go-kit/log"
 )
 
 // Influxstatsd receives metrics observations and forwards them to a server.
@@ -206,10 +206,6 @@ func sum(a []float64) float64 {
 		v += f
 	}
 	return v
-}
-
-func last(a []float64) float64 {
-	return a[len(a)-1]
 }
 
 func sampling(r float64) string {

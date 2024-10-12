@@ -1,0 +1,22 @@
+From: Shengjing Zhu <zhsj@debian.org>
+Date: Tue, 13 Aug 2024 16:38:11 +0800
+Subject: Fix panic in TestGauge
+
+`n-1` is used as slice index, it should be >= 0
+---
+ metrics/teststat/teststat.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/metrics/teststat/teststat.go b/metrics/teststat/teststat.go
+index 7918b9f..db29c38 100644
+--- a/metrics/teststat/teststat.go
++++ b/metrics/teststat/teststat.go
+@@ -42,7 +42,7 @@ func FillCounter(counter metrics.Counter) float64 {
+ // to check that the gauge has the correct final value.
+ func TestGauge(gauge metrics.Gauge, value func() []float64) error {
+ 	a := rand.Perm(100)
+-	n := rand.Intn(len(a))
++	n := rand.Intn(len(a)) + 1
+ 
+ 	var want []float64
+ 	for i := 0; i < n; i++ {

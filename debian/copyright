@@ -26,16 +26,6 @@ Comment: Apart from the files described in the next section, this whole
  To clarify all these matters, a bug has been opened at
  https://github.com/go-kit/kit/issues/640
 
-Files: log/term/terminal_*
-Copyright: 2014 Simon Eskildsen
-License: Expat
-Comment: Files from http://gopkg.in/inconshreveable/log15.v2/term, imported in
- 2015 according to git history. In turn, these files have the following header:
- // Based on ssh/terminal:
- // Copyright 2013 The Go Authors. All rights reserved.
- // Use of this source code is governed by a BSD-style
- // license that can be found in the LICENSE file.
-
 Files: debian/*
 Copyright: 2017 Martina Ferrari <tina@debian.org>
 License: Expat

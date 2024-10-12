@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 
 	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/transport"
+	"github.com/go-kit/log"
 
 	"github.com/nats-io/nats.go"
 )
@@ -150,7 +150,7 @@ func (s Subscriber) ServeMsg(nc *nats.Conn) func(msg *nats.Msg) {
 // types.
 type ErrorEncoder func(ctx context.Context, err error, reply string, nc *nats.Conn)
 
-// ServerFinalizerFunc can be used to perform work at the end of an request
+// SubscriberFinalizerFunc can be used to perform work at the end of an request
 // from a publisher, after the response has been written to the publisher. The principal
 // intended use is for request logging.
 type SubscriberFinalizerFunc func(ctx context.Context, msg *nats.Msg)

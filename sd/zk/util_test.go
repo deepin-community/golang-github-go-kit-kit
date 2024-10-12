@@ -1,23 +1,21 @@
 package zk
 
 import (
-	"context"
 	"errors"
 	"fmt"
 	"io"
 	"sync"
 	"time"
 
-	"github.com/samuel/go-zookeeper/zk"
+	"github.com/go-zookeeper/zk"
 
 	"github.com/go-kit/kit/endpoint"
-	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/sd"
+	"github.com/go-kit/log"
 )
 
 var (
 	path   = "/gokit.test/service.name"
-	e      = func(context.Context, interface{}) (interface{}, error) { return struct{}{}, nil }
 	logger = log.NewNopLogger()
 )
 

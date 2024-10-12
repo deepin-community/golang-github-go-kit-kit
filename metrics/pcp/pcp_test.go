@@ -3,7 +3,7 @@ package pcp
 import (
 	"testing"
 
-	"github.com/performancecopilot/speed"
+	"github.com/performancecopilot/speed/v4"
 
 	"github.com/go-kit/kit/metrics/teststat"
 )
@@ -40,7 +40,7 @@ func TestGauge(t *testing.T) {
 
 	gauge = gauge.With("label values", "not supported").(*Gauge)
 
-	value := func() float64 { f := gauge.g.Val(); return f }
+	value := func() []float64 { f := gauge.g.Val(); return []float64{f} }
 	if err := teststat.TestGauge(gauge, value); err != nil {
 		t.Fatal(err)
 	}
