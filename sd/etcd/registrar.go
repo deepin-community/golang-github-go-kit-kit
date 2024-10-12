@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	etcd "go.etcd.io/etcd/client"
+	etcd "go.etcd.io/etcd/client/v2"
 
-	"github.com/go-kit/kit/log"
+	"github.com/go-kit/log"
 )
 
 const minHeartBeatTime = 500 * time.Millisecond

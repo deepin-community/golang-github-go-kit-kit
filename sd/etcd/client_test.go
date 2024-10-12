@@ -1,13 +1,13 @@
 package etcd
 
 import (
+	"context"
 	"errors"
 	"reflect"
 	"testing"
 	"time"
-	"context"
 
-	etcd "go.etcd.io/etcd/client"
+	etcd "go.etcd.io/etcd/client/v2"
 )
 
 func TestNewClient(t *testing.T) {
@@ -129,14 +129,12 @@ type fakeWatcher struct {
 // When an event occurs it just return nil response and error.
 // When an error occur it return a non nil error.
 func (fw *fakeWatcher) Next(context.Context) (*etcd.Response, error) {
-	for {
-		select {
-		case <-fw.event:
-			return nil, nil
-		case <-fw.err:
-			return nil, errors.New("error from underlying etcd watcher")
-		default:
-		}
+	select {
+	case <-fw.event:
+		return nil, nil
+	case <-fw.err:
+		return nil, errors.New("error from underlying etcd watcher")
+
 	}
 }
 
